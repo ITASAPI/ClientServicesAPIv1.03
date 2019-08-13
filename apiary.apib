@@ -14,9 +14,7 @@ VERSION: 1.03
 ## New Endpoints
 
 <ul>
-<li>ITAS Data Modification Service <b>Create ITAS Data</b>: Create ITAS Data via mapped entities,<a href="/#reference/itas-data-modification-service/itas-data-modification-service/create-itas-data"> Link</a></li>
-<li>ITAS Data Modification Service <b>Update ITAS Data</b>: Update ITAS Data via mapped entities,<a href="/#reference/itas-data-modification-service/itas-data-modification-service/update-itas-data"> Link</a></li>
-<li>ITAS Data Modification Service <b>Delete ITAS Data</b>: Delete ITAS Data via mapped entities,<a href="/#reference/itas-data-modification-service/itas-data-modification-service/delete-itas-data"> Link</a></li>
+<li>Docman <b>Read Required Fields</b>: Read Required Fields for Document Type,<a href="/#reference/docman/document-type-required-fields"> Link</a></li>
 </ul>
 
 ## Updated Endpoints
@@ -48,7 +46,7 @@ Model Header containing AccessToken
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|Data|Array of Required Fields|`array`|30|||
+|Data|Array of Required Fields|`array`||||
 
 + Request (application/json)
     + Header
@@ -1009,8 +1007,8 @@ A multipurpose object used by several endpoints
 + TradingEntityList (array [TradingEntityValueList])
 
 ## RequiredFields (array)
-+ CounterpartyId
 + ContractId
++ DocumentReference
 
 ## ResultsMessage (object)
 + RequestId: `a123a456-7891-23a4-a567-8a9a10aaa123` (string)
