@@ -63,7 +63,7 @@ Model Header containing AccessToken
     + Attributes (404 ResponseNoRec)
 
 
-## Document Indexing.. Release Date TBC [/DocMan/IndexDocument]
+## Document Indexing [/DocMan/Index]
 `POST` Index Document
 
 ### Index Document [POST]
@@ -71,17 +71,16 @@ Model Header containing AccessToken
 <b>Request Body</b>
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|<b>Model</b>||||||
-|DocumentName|Document Name|`string`|200|||
+|<b>Request Body</b>||||||
+|Name|Name|`string`|200|||
 |TradingEntityId|Trading Entity ID|`string`|2|||
 |DocumentType|Document Type|`string`|30|||
-|CounterpartyCode|Counterparty Code|`string`|10|||
-|ContractId|Contract ID|`string`|10|||
-|DocumentReference|Document Reference|`string`|9|||
-|WIPAccountCode|WIP Account Code|`string`|11|||
-|CommodityCode|Pricipal Commodity Code|`string`|3|||
+|CounterpartyId|Counterparty Id|`string`|10|||
+|ContractId|Contract Id|`string`|10|||
+|DocumentRef|Document Reference|`string`|9|||
+|WIPAccountId|WIP Account Id|`string`|11|||
 |PhysicalPath|Physical Path|`string`|200|||
-|IndexedBy|Indexed By|`string`|3|||
+|IsPhysicalPathEncrypted|Is Physical Path Encrypted|`boolean`||||
 
 
 <b>Response Data</b>
@@ -101,7 +100,7 @@ Model Header containing AccessToken
 + Response 201 (application/json; charset=utf-8)
     + Attributes 
         + Data (IndexId)
-        + Response (201 CreateResponse)
+        + Response (200 UpdateResponse)
 
 + Response 400 (application/json)
     + Attributes (400 StatusResponse)
@@ -947,7 +946,7 @@ A multipurpose object used by several endpoints
 + Model (Model)
 
 ## IndexId (object)
-+ IndexId: 100 (number)
++ IndexId: Document indexed successfully (string)
 
 ## JobId (object)
 + JobRef: Job1 (string)
