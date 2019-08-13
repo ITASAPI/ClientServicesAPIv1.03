@@ -72,7 +72,7 @@ Model Header containing AccessToken
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
 |<b>Request Body</b>||||||
-|Name|Name|`string`|200|||
+|Name|Document Name|`string`|200|||
 |TradingEntityId|Trading Entity ID|`string`|2|||
 |DocumentType|Document Type|`string`|30|||
 |CounterpartyId|Counterparty Id|`string`|10|||
@@ -86,7 +86,7 @@ Model Header containing AccessToken
 <b>Response Data</b>
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|IndexId|Index ID|`number`||||
+|IndexId|Index Id|`number`||||
 
 + Request (application/json)
     + Header
@@ -97,9 +97,47 @@ Model Header containing AccessToken
     + Attributes (IndexDocument)
 
 
-+ Response 201 (application/json; charset=utf-8)
++ Response 200 (application/json; charset=utf-8)
     + Attributes 
         + Data (IndexId)
+        + Response (200 UpdateResponse)
+
++ Response 400 (application/json)
+    + Attributes (400 StatusResponse)
+
++ Response 404 (application/json)
+    + Attributes (404 NotFound)
+
+
+## Document Archiving [/DocMan/Archive]
+`POST` Index Document
+
+### Archive Document [POST]
+
+<b>Request Body</b>
+|Property|Description|Type|Max Length|Notes|Constraint|
+|--------|-----------|----|----------|-----|----------|
+|<b>Request Body</b>||||||
+|Path|Document Path|`string`|200|||
+
+
+<b>Response Data</b>
+|Property|Description|Type|Max Length|Notes|Constraint|
+|--------|-----------|----|----------|-----|----------|
+|Data|Data response|`string`||||
+
++ Request (application/json)
+    + Header
+
+            AccessToken: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6ImRlZXBhayIsInN1YiI6ImRlZXBhayIsInJvbGUiOlsiNzk5YjhhNDEtYWI0ZS00MTBhLWI5MTktYzU3ZWFlMmFlMDI5IiwiZGVlcGFrIiwiQVNQLk5FVCBJZGVudGl0eSIsIjViNDE4ODE2LTI3ZjQtNGRlOC1iNmMyLTJlZTcxNjI3ZmJmYyIsIkFkbWluIiwiU3VwZXJBZG1pbiJdLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMjciLCJhdWQiOiI4MjkzNjk0MjJmNzA0NTIzODUxZDk4NTU2YjZkNTQyYiIsImV4cCI6MTQ1OTQzMjk0MSwibmJmIjoxNDU5NDMxMTQxfQ.JgPGxt0Ok5baKx0YMXlO6D9kUYrCWM-Kma9b9iMW8tg
+
+
+    + Attributes (ArchiveDocument)
+
+
++ Response 200 (application/json; charset=utf-8)
+    + Attributes 
+        + Data ("Document Archived Successfully")
         + Response (200 UpdateResponse)
 
 + Response 400 (application/json)
@@ -885,6 +923,9 @@ A multipurpose object used by several endpoints
 + AccountDescription: Bauche Account Provisions (string)
 + EDICode: 1234 (string)
 + Status: O (string)
+
+## ArchiveDocument (object)
++ Path: `JT\\CASGDOCS\\TEST.TXT` (string)
 
 ## CommodityValueList (object)
 + CommodityFullCode: CHE||CASO||47||QWE||RTY (string)
