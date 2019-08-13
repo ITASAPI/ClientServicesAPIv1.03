@@ -59,11 +59,8 @@ Model Header containing AccessToken
         + Data (RequiredFields)
         + Response (200 SuccessResponse)
 
-+ Response 400 (application/json)
-    + Attributes (400 StatusResponse)
-
 + Response 404 (application/json)
-    + Attributes (404 NotFound)
+    + Attributes (404 ResponseNoRec)
 
 
 ## Document Indexing.. Release Date TBC [/DocMan/IndexDocument]
@@ -795,6 +792,15 @@ A multipurpose object used by several endpoints
 ## 400 InfoMessageDetail (object)
 + Severity: Information (string)
 + Message: `API50xx - Data : Now create xyz.` (string)
+
+## 404 ResponseNoRec (object)
++ Response
+    + Value: 404 Not Found (string)
++ Messages (array[404 ErrorMessageDetailMessageNoRec])
+
+## 404 ErrorMessageDetailMessageNoRec (object)
++ Severity: Warning (string)
++ Message: `API5068 - Data : No records found.` (string)
 
 ## 404 NotFoundResponse (object)
 + Value: Not Found
