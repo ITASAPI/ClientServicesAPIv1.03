@@ -48,11 +48,7 @@ Model Header containing AccessToken
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|DocumentType|Document Type|`string`|30|||
-|ContractId|Contract Id|`string`|10|||
-|CounterpartyId|Counterparty Id|`string`|10|||
-|DocumentReference|Document Refrence|`string`|9|||
-|WipAccountId|WIP Account Id|`string`|11|||
+|Data|Array of Required Fields|`array`|30|||
 
 + Request (application/json)
     + Header
@@ -63,10 +59,10 @@ Model Header containing AccessToken
     + Attributes (IndexDocument)
 
 
-+ Response 201 (application/json; charset=utf-8)
++ Response 200 (application/json; charset=utf-8)
     + Attributes 
-        + Data (IndexId)
-        + Response (201 CreateResponse)
+        + Data (array [RequiredFields])
+        + Response (200 SuccessResponse)
 
 + Response 400 (application/json)
     + Attributes (400 StatusResponse)
@@ -1014,6 +1010,10 @@ A multipurpose object used by several endpoints
 + ContractTermPortList (array [ContractTermPortValueList])
 + ShipmentStatusList (array [ShipmentStatusValueList])
 + TradingEntityList (array [TradingEntityValueList])
+
+## RequiredFields (object)
++ CounterpartyId
++ ContractId
 
 ## ResultsMessage (object)
 + RequestId: `a123a456-7891-23a4-a567-8a9a10aaa123` (string)
