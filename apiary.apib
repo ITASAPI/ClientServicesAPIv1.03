@@ -101,11 +101,11 @@ Model Header containing AccessToken
 
 + Response 200 (application/json; charset=utf-8)
     + Attributes 
-        + Data (IndexId)
+        + Data : Document indexed successfully (string)
         + Response (200 UpdateResponse)
 
 + Response 400 (application/json)
-    + Attributes (400 StatusResponse)
+    + Attributes (400 BadReadResponse)
 
 + Response 404 (application/json)
     + Attributes (404 NotFound)
@@ -143,7 +143,7 @@ Model Header containing AccessToken
         + Response (200 UpdateResponse)
 
 + Response 400 (application/json)
-    + Attributes (400 StatusResponse)
+    + Attributes (400 BadReadResponse)
 
 + Response 404 (application/json)
     + Attributes (404 NotFound)
@@ -996,8 +996,6 @@ A multipurpose object used by several endpoints
 + PhysicalPath: `\\\\hivedome-fs01\\itas\\Comp\\DroppedFiles\\JT\\TRADEDOCS\\ITAS_NG.20180220.log` (string)
 + IsPhysicalPathEncrypted: false (boolean)
 
-## IndexId (object)
-+ IndexId: Document indexed successfully (string)
 
 ## JobId (object)
 + JobRef: Job1 (string)
