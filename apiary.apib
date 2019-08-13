@@ -14,7 +14,9 @@ VERSION: 1.03
 ## New Endpoints
 
 <ul>
-<li>Docman <b>Read Required Fields</b>: Read Required Fields for Document Type,<a href="/#reference/docman/document-type-required-fields"> Link</a></li>
+<li>Docman <b>Document Type Required Fields</b>: GET Required Fields for Document Type,<a href="/#reference/docman/document-type-required-fields"> Link</a></li>
+<li>Docman <b>Document Indexing</b>: POST Index Document,<a href="/#reference/docman/document-indexing"> Link</a></li>
+<li>Docman <b>Document Archiving</b>: POST Archive Document,<a href="/#reference/docman/document-archiving"> Link</a></li>
 </ul>
 
 ## Updated Endpoints
@@ -110,7 +112,7 @@ Model Header containing AccessToken
 
 
 ## Document Archiving [/DocMan/Archive]
-`POST` Index Document
+`POST` Archive Document
 
 ### Archive Document [POST]
 
@@ -137,7 +139,7 @@ Model Header containing AccessToken
 
 + Response 200 (application/json; charset=utf-8)
     + Attributes 
-        + Data : Archived (string)
+        + Data : Document archived successfully (string)
         + Response (200 UpdateResponse)
 
 + Response 400 (application/json)
@@ -926,9 +928,6 @@ A multipurpose object used by several endpoints
 
 ## ArchiveDocument (object)
 + Path: `JT\\CASGDOCS\\TEST.TXT` (string)
-
-## ArchiveResponse (string)
-+ Document archived successfully
 
 ## CommodityValueList (object)
 + CommodityFullCode: CHE||CASO||47||QWE||RTY (string)
