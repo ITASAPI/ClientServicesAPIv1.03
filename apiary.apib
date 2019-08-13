@@ -779,6 +779,15 @@ A multipurpose object used by several endpoints
 + Severity: Error (string)
 + Messages: `API5091 - API : There is no certificate/user for RequestId {RequestId}` (string)
 
+## 400 ResponseDQS (object)
++ Response
+    + Value: 400 Bad Request (string)
++ Messages (array [400 ErrorMessageDetailDQS])
+
+## 400 ErrorMessageDetailDQS (object)
++ Severity: Error (string)
++ Message: `{fieldName} is not a field of type {fieldName}.` (string)
+
 ## 400 StatusResponse (object)
 + Response
     + Value: 400 Failed (string)
@@ -820,6 +829,15 @@ A multipurpose object used by several endpoints
 ## 404 ErrorMessageDetailMessage (object)
 + Severity: Warning (string)
 + Message: `API5084 - API : The value {TradingEntityId} sent as the TradingEntitiyId does not exist.` (string)
+
+## 404 ResponseDQS (object)
++ Response
+    + Value: 404 Not found (string)
++ Messages (array[404 ErrorMessageDetailMessageDQS])
+
+## 404 ErrorMessageDetailMessageDQS (object)
++ Severity: Warning (string)
++ Message: `Invalid trading entities specified: {tradingEntity}.` (string)
 
 
 ## 404 RequestIdResponse (object)
