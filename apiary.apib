@@ -65,12 +65,39 @@ Model Header containing AccessToken
     + Attributes (404 ResponseNoRec)
 
 
+## Document Upload [/DocMan/Upload/{Document}]
+`POST` Upload Document, using request body type form-data, and optional model value to add indexing information
+
+### Upload Document [POST]
+
+<b>Request Body type 'Form-Data'</b>
+|Key|Value|
+|--------|-----------|
+|File|`Select Files`|Required|
+|model|`{"TradingEntityId": "JT", "DocumentType": "INVOICES"}`||
+
++ Request (application/json)
+    + Header
+
+            AccessToken: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6ImRlZXBhayIsInN1YiI6ImRlZXBhayIsInJvbGUiOlsiNzk5YjhhNDEtYWI0ZS00MTBhLWI5MTktYzU3ZWFlMmFlMDI5IiwiZGVlcGFrIiwiQVNQLk5FVCBJZGVudGl0eSIsIjViNDE4ODE2LTI3ZjQtNGRlOC1iNmMyLTJlZTcxNjI3ZmJmYyIsIkFkbWluIiwiU3VwZXJBZG1pbiJdLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMjciLCJhdWQiOiI4MjkzNjk0MjJmNzA0NTIzODUxZDk4NTU2YjZkNTQyYiIsImV4cCI6MTQ1OTQzMjk0MSwibmJmIjoxNDU5NDMxMTQxfQ.JgPGxt0Ok5baKx0YMXlO6D9kUYrCWM-Kma9b9iMW8tg
+
++ Response 201 (application/json; charset=utf-8)
+    + Attributes 
+        + Data : All files were uploaded successfully (string)
+        + Response (201 CreateResponse)
+
++ Response 400 (application/json)
+    + Attributes (400 BadReadResponse)
+
++ Response 404 (application/json)
+    + Attributes (404 NotFound)
+
+
 ## Document Indexing [/DocMan/Index]
 `POST` Index Document
 
 ### Index Document [POST]
 
-<b>Request Body</b>
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
 |<b>Request Body</b>||||||
@@ -99,21 +126,16 @@ Model Header containing AccessToken
     + Attributes (IndexDocument)
 
 
-+ Response 200 (application/json; charset=utf-8)
++ Response 201 (application/json; charset=utf-8)
     + Attributes 
         + Data : Document indexed successfully (string)
-        + Response (200 UpdateResponse)
+        + Response (201 CreateResponse)
 
 + Response 400 (application/json)
     + Attributes (400 BadReadResponse)
 
 + Response 404 (application/json)
     + Attributes (404 NotFound)
-
-## Upload Documents [/DocMan/Upload/{Document}]
-`POST` Upload Document
-
-### Upload Documents [POST]
 
 
 
