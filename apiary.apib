@@ -9,14 +9,16 @@ VERSION: 1.03
 **** Warning: at this point, ITAS API does not support asynchronus or multithreading calls for POST, PUT and PATCH requests. Async or multithreading requests could result in various Error messages, or even a corruption of data in extreme cases and are therefore not supported. ****
 <br />
 <br />
-<strong>Release notes</strong> (DD<sup>st</sup> MM 2019)
+<strong>Release notes</strong> (20<sup>th</sup> August 2019)
 
 ## New Endpoints
 
 <ul>
-<li>Docman <b>Document Type Required Fields</b>: GET Required Fields for Document Type,<a href="/#reference/docman/document-type-required-fields"> Link</a></li>
-<li>Docman <b>Document Indexing</b>: POST Index Document,<a href="/#reference/docman/document-indexing"> Link</a></li>
-<li>Docman <b>Document Archiving</b>: POST Archive Document,<a href="/#reference/docman/document-archiving"> Link</a></li>
+<li>Docman <b>Read Required Fields</b>: GET Required Fields for Document Type,<a href="/#reference/docman/document-type-required-fields"> Link</a></li>
+<li>Docman <b>Upload Document</b>: POST Upload Document,<a href="/#reference/docman/document-upload"> Link</a></li>
+<li>Docman <b>Index Document</b>: POST Index Document,<a href="/#reference/docman/document-indexing"> Link</a></li>
+<li>Docman <b>Download Document</b>: GET Download Document,<a href="/#reference/docman/download-document"> Link</a></li>
+<li>Docman <b>Archive Document</b>: PUT Archive Document,<a href="/#reference/docman/document-archiving"> Link</a></li>
 </ul>
 
 ## Updated Endpoints
@@ -978,7 +980,7 @@ A multipurpose object used by several endpoints
 + Status: O (string)
 
 ## ArchiveDocument (object)
-+ Path: `JT\\CASGDOCS\\TEST.TXT` (string)
++ Path: `JT\\CASHDOCS\\TEST.TXT` (string)
 
 ## CommodityValueList (object)
 + CommodityFullCode: CHE||CASO||47||QWE||RTY (string)
